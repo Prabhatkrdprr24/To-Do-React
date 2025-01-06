@@ -1,0 +1,5 @@
+// This file is used to ignore files and directories that you don't want to track in your git repository.
+
+node_modules/
+package-lock.json
+package.json
