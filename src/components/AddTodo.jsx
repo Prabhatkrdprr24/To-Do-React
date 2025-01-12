@@ -1,19 +1,19 @@
 function AddTodo() {
   return (
-    <div class="container">
-      <div class="row Pk-row">
-        <div class="col-6">
+    <div className="container">
+      <div className="row Pk-row">
+        <div className="col-6">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Add Task"
           ></input>
         </div>
-        <div class="col-4">
-          <input type="date" class="form-control"></input>
+        <div className="col-4">
+          <input type="date" className="form-control"></input>
         </div>
-        <div class="col-2">
-          <button type="button" class="btn btn-success Pk-button">
+        <div className="col-2">
+          <button type="button" className="btn btn-success Pk-button">
             ADD
           </button>
         </div>
