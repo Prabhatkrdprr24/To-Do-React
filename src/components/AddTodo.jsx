@@ -1,29 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MdAddToPhotos } from "react-icons/md";
 
 function AddTodo({handleAddTodo}) {
 
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
-
-  const handleTodoName = (event) => {
-    console.log(event.target.value);
-    setTodoName(event.target.value);
-  }
-
-  const handleTodoDate = (event) => {
-    console.log(event.target.value);
-    
-    setDueDate(event.target.value);
-  }
+  const todoNameElement = useRef();
+  const todoDateElement = useRef();
 
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
-    console.log("handle clicked triggered " + todoName, dueDate);
-    
+    const todoName = todoNameElement.current.value;
+    const dueDate = todoDateElement.current.value;
     handleAddTodo(todoName, dueDate);
-    setTodoName("");
-    setDueDate("");
   }
 
   return (
@@ -34,16 +21,14 @@ function AddTodo({handleAddTodo}) {
             type="text"
             className="form-control"
             placeholder="Add Task"
-            onChange={(event) => handleTodoName(event)}
-            value={todoName}
+            ref = {todoNameElement}
           ></input>
         </div>
         <div className="col-4">
           <input 
           type="date" 
           className="form-control"
-          onChange={(event) => handleTodoDate(event)}
-          value={dueDate}
+          ref={todoDateElement}
           >
           </input>
         </div>
