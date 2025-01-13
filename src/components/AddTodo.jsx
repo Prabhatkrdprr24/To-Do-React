@@ -11,6 +11,8 @@ function AddTodo({handleAddTodo}) {
     const todoName = todoNameElement.current.value;
     const dueDate = todoDateElement.current.value;
     handleAddTodo(todoName, dueDate);
+    todoNameElement.current.value = '';
+    todoDateElement.current.value = '';
   }
 
   return (
