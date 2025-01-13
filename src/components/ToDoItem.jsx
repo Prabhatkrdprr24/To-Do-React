@@ -1,6 +1,11 @@
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
 
-function ToDoItem({todoName, todoDate, onDeleteClick}) {
+function ToDoItem({todoName, todoDate}) {
+
+  const contextObj = useContext(TodoItemsContext);
+  const onDeleteClick = contextObj.deleteItem;
 
   return (
     <div className="container">

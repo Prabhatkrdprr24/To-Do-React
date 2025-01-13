@@ -1,7 +1,12 @@
 import { useState, useRef } from "react";
 import { MdAddToPhotos } from "react-icons/md";
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function AddTodo({handleAddTodo}) {
+function AddTodo() {
+
+  const contextObj = useContext(TodoItemsContext);
+  const handleAddTodo = contextObj.addNewItem;
 
   const todoNameElement = useRef();
   const todoDateElement = useRef();
