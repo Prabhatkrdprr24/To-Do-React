@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MdAddToPhotos } from "react-icons/md";
 
 function AddTodo({handleAddTodo}) {
 
@@ -52,7 +53,7 @@ function AddTodo({handleAddTodo}) {
           className="btn btn-success Pk-button"
           onClick={handleAddButtonClicked}
           >
-            ADD
+            <MdAddToPhotos />
           </button>
         </div>
 
