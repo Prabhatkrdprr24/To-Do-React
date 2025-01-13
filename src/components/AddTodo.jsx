@@ -17,7 +17,8 @@ function AddTodo({handleAddTodo}) {
     setDueDate(event.target.value);
   }
 
-  const handleAddButtonClicked = () => {
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
     console.log("handle clicked triggered " + todoName, dueDate);
     
     handleAddTodo(todoName, dueDate);
@@ -27,7 +28,7 @@ function AddTodo({handleAddTodo}) {
 
   return (
     <div className="container">
-      <div className="row Pk-row">
+      <form className="row Pk-row" onSubmit={handleAddButtonClicked}>
         <div className="col-6">
           <input
             type="text"
@@ -49,15 +50,13 @@ function AddTodo({handleAddTodo}) {
 
         <div className="col-2">
           <button 
-          type="button" 
           className="btn btn-success Pk-button"
-          onClick={handleAddButtonClicked}
           >
             <MdAddToPhotos />
           </button>
         </div>
 
-      </div>
+      </form>
     </div>
   );
 }
