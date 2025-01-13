@@ -11,8 +11,10 @@ function App() {
   const handleAddTodo = (todoName, dueDate) => {
     console.log("In app.jsx handleAddTodo is clicked : ", todoName, dueDate);
     
-    const newTodoItems = [...todoItems, {todoName: todoName, todoDate: dueDate}];
-    setTodoItems(newTodoItems);
+    setTodoItems((currVal) => {
+      const newTodoItems = [...currVal, {todoName: todoName, todoDate: dueDate}];
+      return newTodoItems;                 
+    });
   }
 
   const handleDeleteItem = (todoItemName) => {
